@@ -4,8 +4,15 @@ import path from "path";
 import { v4 as uuid } from "uuid";
 import addSchool from "./controller/addSchool.js";
 import viewSchools from "./controller/viewSchools.js";
+import cors from "cors";
 
 const app = express();
+
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 const port = process.env.port || 3000;
 
